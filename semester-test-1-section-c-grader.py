@@ -84,25 +84,25 @@ if image is not None:
     grade = 0
     if st.button("Grade"):
         if st.session_state.chk1:
-            q1_grade += 1
+            grade += 1
         if st.session_state.chk2:
-            q1_grade += 1
+            grade += 1
         if st.session_state.chk3:
-            q1_grade += 1
+            grade += 1
         if st.session_state.chk4:
-            q1_grade += 1
+            grade += 1
         if st.session_state.chk5:
-            q1_grade += 1
+            grade += 1
         if st.session_state.chk6:
-            q1_grade += 1
+            grade += 1
         if st.session_state.chk7:
-            q1_grade += 1
+            grade += 1
         if st.session_state.chk8:
-            q1_grade += 1
+            grade += 1
         if st.session_state.chk9:
-            q1_grade += 1
+            grade += 1
         if st.session_state.chk10:
-            q1_grade += 1
+            grade += 1
 
         df.iloc[row_index, 8] = grade
         grades = df.to_csv(index=False)
