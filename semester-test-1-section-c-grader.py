@@ -102,7 +102,7 @@ if image is not None:
         if st.session_state.chk10:
             q1_grade += 1
 
-        df.iloc[row_index, 6] = grade
+        df.iloc[row_index, 8] = grade
         grades = df.to_csv(index=False)
 
         final_img = cv.putText(img=warped_img, text=f'{int(st.session_state.chk1)}', org=(300, 315), fontFace=cv.FONT_HERSHEY_SIMPLEX,
