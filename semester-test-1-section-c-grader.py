@@ -6,7 +6,7 @@ from PIL import Image
 import io
 import re
 
-st.title("Semester Test 1 - Multiple Choice")
+st.title("Semester Test 1 - Mapwork")
 
 st.subheader("Select the grades files")
 gc = st.file_uploader("Select the grades CSV file", type = "csv")
