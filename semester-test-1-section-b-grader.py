@@ -91,7 +91,7 @@ if image is not None:
         grade += st.session_state.slider5
         grade += st.session_state.slider6
 
-        df.iloc[row_index, 6] = grade
+        df.iloc[row_index, 7] = grade
         grades = df.to_csv(index=False)
 
 
