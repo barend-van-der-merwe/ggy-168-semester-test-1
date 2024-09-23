@@ -10,7 +10,7 @@ st.title("Semester Test 1 - Short Questions")
 
 st.subheader("Select the grades files")
 gc = st.file_uploader("Select the grades CSV file", type = "csv")
-global df
+
 
 
 st.subheader("Select Student Submission")
@@ -53,6 +53,7 @@ if image is not None:
     snumber_from_filename = re.sub("-", '', snumber_from_filename[0])
     st.write(f'Student number: {snumber_from_filename}')
 
+    global df
     df = pd.read_csv(gc)
     global row_index
     row_index = df.index[df["Username"] == snumber_from_filename].tolist()
