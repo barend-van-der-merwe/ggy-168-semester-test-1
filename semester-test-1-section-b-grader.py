@@ -76,15 +76,15 @@ if image is not None:
         st.slider("Q 13b", min_value=0.0, max_value=1.0, step=0.5, key="slider4")
         st.slider("Q 13c", min_value=0.0, max_value=1.0, step=0.5, key="slider5")
         chk3 = st.checkbox("Q 13d", key="chk4")
-        st.slider("Q 14", min_value=0.0, max_value=5.0, step=0.5, key="slider6")
+        st.slider("Q 14", min_value=0.0, max_value=2.0, step=0.5, key="slider6")
 
     global grade
     grade = 0
 
     if st.button("Grade"):
-        grade += st.session_state.chk1
-        grade += st.session_state.chk2
-        grade += st.session_state.chk3
+        grade += st.session_state.chk1*0.5
+        grade += st.session_state.chk2*0.5
+        grade += st.session_state.chk3*0.5
         grade += st.session_state.chk4
         grade += st.session_state.slider1
         grade += st.session_state.slider2
