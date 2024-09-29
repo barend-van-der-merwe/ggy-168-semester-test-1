@@ -239,7 +239,7 @@ if image is not None:
 
     st.image(memo)
     st.write(f'GRADE: {grade}')
-    st.slider("Mark Adjustment", min_value = 0, max_value=10, step=1, key="mcq_adjust")
+    st.slider("Mark Adjustment", min_value = -10, max_value=10, step=1, key="mcq_adjust")
 
     if st.button("Grade"):
         grade += st.session_state.mcq_adjust
