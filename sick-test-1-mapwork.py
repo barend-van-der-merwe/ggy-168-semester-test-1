@@ -47,7 +47,7 @@ if image is not None:
     details = warped_img[0:250, 0:972]
     answer = warped_img[250:, 0:972]
     answer = cv.rectangle(answer, (283,533), (318,568), (0, 0, 255), 1, 8, 0)
-    answer = cv.rectangle(answer, (508, 470), (543, 505), (0, 0, 255), 1, 8, 0)
+    answer = cv.rectangle(answer, (485, 470), (520, 505), (0, 0, 255), 1, 8, 0)
 
     st.image(details)
     snumber_from_filename = re.findall(r"-u[0-9]*", image.name)
