@@ -122,6 +122,9 @@ if image is not None:
         final_img = cv.putText(img=warped_img, text=f'{int(st.session_state.chk9) + int(st.session_state.chk10)}',
                                org=(450, 850), fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                fontScale=1, color=(0, 0, 255), thickness=1)
+        final_img = cv.putText(img=warped_img, text=f'{grade}', org=(550, 150),
+                               fontFace=cv.FONT_HERSHEY_SIMPLEX,
+                               fontScale=1, color=(0, 0, 255), thickness=2)
         st.image(final_img)
         filename = f"{surname}-{first}-{snumber_from_filename}.png"
         final_img_rgb = cv.cvtColor(final_img, cv.COLOR_BGR2RGB)
