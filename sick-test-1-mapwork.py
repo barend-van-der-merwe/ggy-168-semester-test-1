@@ -116,11 +116,12 @@ if image is not None:
         final_img = cv.putText(img=warped_img, text=f'{int(st.session_state.chk5) + int(st.session_state.chk6)}',
                                org=(680, 340), fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                fontScale=1, color=(0, 0, 255), thickness=1)
+        #text on map
         final_img = cv.putText(img=warped_img, text=f'{int(st.session_state.chk7) + int(st.session_state.chk8)}',
-                               org=(200, 600), fontFace=cv.FONT_HERSHEY_SIMPLEX,
+                               org=(330,568), fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                fontScale=1, color=(0, 0, 255), thickness=1)
         final_img = cv.putText(img=warped_img, text=f'{int(st.session_state.chk9) + int(st.session_state.chk10)}',
-                               org=(450, 850), fontFace=cv.FONT_HERSHEY_SIMPLEX,
+                               org=(455,505), fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                fontScale=1, color=(0, 0, 255), thickness=1)
         final_img = cv.putText(img=warped_img, text=f'{grade}', org=(550, 150),
                                fontFace=cv.FONT_HERSHEY_SIMPLEX,
