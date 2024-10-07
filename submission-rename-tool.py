@@ -20,8 +20,8 @@ if image and gc is not None:
         sname = st.text_input("Surname", value=surname)
         fname = st.text_input("Initials", value=first)
         filename = f"{surname}-{first}-{snumber}.png"
-    final_img_rgb = cv.cvtColor(img, cv.COLOR_BGR2RGB)
-    final_img_pil = Image.fromarray(final_img_rgb)
-    buffer = io.BytesIO()
-    final_img_pil.save(buffer, format="PNG")
-    st.download_button(label=f"Download {filename}", data=buffer, file_name=filename, mime="image/png")
+        final_img_rgb = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+        final_img_pil = Image.fromarray(final_img_rgb)
+        buffer = io.BytesIO()
+        final_img_pil.save(buffer, format="PNG")
+        st.download_button(label=f"Download {filename}", data=buffer, file_name=filename, mime="image/png")
