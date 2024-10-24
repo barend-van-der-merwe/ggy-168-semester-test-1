@@ -67,7 +67,7 @@ if image is not None:
     st.checkbox("15) Year calculation shown and correct (5 years)", key = "chk2")
     st.checkbox("15) Change in magnetic calculation correct (30')", key = "chk3")
     st.checkbox("15) New magnetic declination correct (7.07°W OR 7°4'W)", key = 'chk4')
-    st.checkbox("16) Reverse magnetic bearing correct (230° - 235°)", key = "chk5")
+    st.checkbox("16) Reverse magnetic bearing correct (49° - 53°)", key = "chk5")
     st.slider("18a) Point E in correct position", min_value=0, max_value=2, step=1,key="slider1")
 
     if st.button("Grade"):
