@@ -89,18 +89,19 @@ if image is not None:
         strip4_area = st.number_input("strip 4 area", format="%0.3f")
 
     area = st.number_input("Calculated Area", format="%0.3f")
-
+    st.slider("Units incorrect", min_value=-1, max_value=0, value=0, step=1, key="slider3")
     st.image(mapwork)
     st.slider("Q14) Point in the correct position", min_value=0.0, max_value=1.0, step=0.5, key="slider1")    
     st.slider("Working shown", min_value=0.0, max_value=1.0, step=0.5, key = "slider2")
+
 
     global grade
     grade = 0
 
     if st.button("Grade"):
         # q14
-        grade += int(st.session_state.slider1)
-        warped_img = cv.putText(img=warped_img, text=f"{int(st.session_state.slider1)}",
+        grade += float(st.session_state.slider1)
+        warped_img = cv.putText(img=warped_img, text=f"{float(st.session_state.slider1)}",
                                    org=(522, 742),
                                    fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                    fontScale=0.5, color=(0, 0, 255), thickness=1)
@@ -280,9 +281,17 @@ if image is not None:
                                     fontScale=0.5, color=(0, 0, 255), thickness=1)
 
         # check if work is shown
-        grade += int(st.session_state.slider2)
-        warped_img = cv.putText(img=warped_img, text=f'{int(st.session_state.slider1)}',
+        grade += float(st.session_state.slider2)
+        warped_img = cv.putText(img=warped_img, text=f'{float(st.session_state.slider1)}',
                                 org=(670, 642),
+                                fontFace=cv.FONT_HERSHEY_SIMPLEX,
+                                fontScale=0.5, color=(0, 0, 255), thickness=1)
+        
+        #check if there is a penalty for incorrect units
+        grade += int(st.session_state.slider3)
+        if int(st.session_state.slider3) != 0:
+            warped_img = cv.putText(img=warped_img, text=f'Units incorrect: {float(st.session_state.slider3)}',
+                                org=(255,233),
                                 fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                 fontScale=0.5, color=(0, 0, 255), thickness=1)
 
@@ -291,6 +300,8 @@ if image is not None:
                                fontScale=1, color=(0, 0, 255), thickness=2)
 
 
+        
+            
 
         st.image(final_img)
         filename = f"{surname}-{first}-{snumber_from_filename}.png"
