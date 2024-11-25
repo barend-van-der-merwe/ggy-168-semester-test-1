@@ -70,22 +70,22 @@ if image is not None:
 
     st.checkbox("11) Normal force correctly indicated on figure", key ='chk1')
     st.checkbox("11) Force || to surface correctly indicated on figure", key ='chk2')
-    st.checkbox("11) Force || to surface correctly calculated", key ='chk3')
-    st.checkbox("11) Force normal to surface correctly calculated", key ='chk4')
-    st.checkbox("12) Work shown for Strahler Stream Order", key = "chk5")
+    st.slider("11) Force || to surface correctly calculated", min_value=0.0, max_value=1.0, step=0.5, key ='slider3')
+    st.slider("11) Force normal to surface correctly calculated", min_value=0.0, max_value=1.0, step=0.5, key ='slider4')
+    st.slider("12) Work shown for Strahler Stream Order", min_value=0.0, max_value=1.0, step=0.5, key = "slider5")
     st.checkbox("12) Strahler stream order correctly calculated", key = "chk6")
-    st.checkbox("12) Work shown for Shreve stream magnitude", key ="chk7")
+    st.slider("12) Work shown for Shreve stream magnitude", min_value=0.0, max_value=1.0, step=0.5, key ="slider7")
     st.checkbox("12) Shreve stream order correctly calculated", key = "chk8")
     st.slider("13) K-factor correctly calculated", min_value = 0.0, max_value = 2.0, step = 0.5, key = "slider1")
 
     if st.button("Grade"):
         grade += st.session_state.chk1
         grade += st.session_state.chk2
-        grade += st.session_state.chk3
-        grade += st.session_state.chk4
-        grade += st.session_state.chk5
+        grade += st.session_state.slider3
+        grade += st.session_state.slider4
+        grade += st.session_state.slider5
         grade += st.session_state.chk6
-        grade += st.session_state.chk7
+        grade += st.session_state.slider7
         grade += st.session_state.chk8
         grade += st.session_state.slider1
         
@@ -103,15 +103,15 @@ if image is not None:
                                fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                fontScale=0.5, color=(0, 0, 255), thickness=1)
         
-        final_img = cv.putText(img=final_img, text=f'{int(st.session_state.chk3)}', org=(467,327),
+        final_img = cv.putText(img=final_img, text=f'{float(st.session_state.slider3)}', org=(467,327),
                                fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                fontScale=0.5, color=(0, 0, 255), thickness=1)
         
-        final_img = cv.putText(img=final_img, text=f'{int(st.session_state.chk4)}', org=(467,399),
+        final_img = cv.putText(img=final_img, text=f'{float(st.session_state.slider4)}', org=(467,399),
                                fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                fontScale=0.5, color=(0, 0, 255), thickness=1)
         
-        final_img = cv.putText(img=final_img, text=f'{int(st.session_state.chk5)}', org=(96,627),
+        final_img = cv.putText(img=final_img, text=f'{float(st.session_state.slider5)}', org=(96,627),
                                fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                fontScale=0.5, color=(0, 0, 255), thickness=1)
 
@@ -119,7 +119,7 @@ if image is not None:
                                fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                fontScale=0.5, color=(0, 0, 255), thickness=1)
         
-        final_img = cv.putText(img=final_img, text=f'{int(st.session_state.chk7)}', org=(426,627),
+        final_img = cv.putText(img=final_img, text=f'{float(st.session_state.slider7)}', org=(426,627),
                                fontFace=cv.FONT_HERSHEY_SIMPLEX,
                                fontScale=0.5, color=(0, 0, 255), thickness=1)
         
