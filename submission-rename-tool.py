@@ -10,7 +10,7 @@ image = st.file_uploader("Select the student submission", type = ["png", "jpg"])
 if image and gc is not None:
     img_bytes = np.asarray(bytearray(image.read()), dtype=np.uint8)
     img = cv.imdecode(img_bytes, 1)
-    snumber = st.text_input("Student Number")
+    snumber = st.text_input("Student Number", autocomplete=None)
     st.image(img)
     if st.button("Load Details"):
         df = pd.read_csv(gc)
